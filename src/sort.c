@@ -6,7 +6,7 @@
 #include "bubbleSort.h"
 #include "heapSort.h"
 
-#define LENGTH 10240
+#define LENGTH 1024000
 
 typedef struct book Book;
 
@@ -28,6 +28,7 @@ void sortIt(int numbers[], int length) {
 //	mergeSort(numbers, 0, length - 1);
 	heapSort(numbers, length);
 //	bubbleSort(numbers, length);
+//	printArray(numbers, length);
 	FILE *fp;
 	fp = fopen("sorted.txt", "w");
 	fprintf(fp, "--==Sorted numbers==--\n");
@@ -42,7 +43,7 @@ void sortIt(int numbers[], int length) {
 
 int main() {
 	srand(time(0));
-	int numbers[LENGTH] = {3, 7, 2, 5, 4, 1, 6, 8 };//{ 6, 5, 3, 1, 8, 7, 2, 4 };
+	int numbers[LENGTH]; //= {6, 5, 3, 1, 8, 7, 2, 4 };
 //	siftUp(numbers, 0, 5);
 //	heapSort(numbers, LENGTH);
 //	printArray(numbers, LENGTH);
